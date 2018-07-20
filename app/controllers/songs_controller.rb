@@ -114,6 +114,11 @@ class SongsController < ApplicationController
     render layout: false
   end
 
+  def praise_set_song
+    song = Song.find(params[:id])
+    render partial: "praise_set_song", locals: { song: song }
+  end
+
   private
   def song_params
     params.require(:song)
